@@ -192,7 +192,7 @@
   text-align: center;
   padding-inline: var(--container-px);
   max-width: 900px;
-  animation: hero-emerge 1.2s ease 1s both;
+  animation: hero-emerge 1.2s ease 4s both;
 }
 
 @keyframes hero-emerge {
