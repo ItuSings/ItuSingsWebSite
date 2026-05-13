@@ -335,6 +335,20 @@
   object-fit: cover;
   box-shadow: 0 24px 60px rgba(201, 168, 76, 0.2);
   display: block;
+  transition: box-shadow var(--ease-base), transform var(--ease-base);
+}
+
+.music__artwork:hover img {
+  box-shadow: 0 24px 60px rgba(201, 168, 76, 0.45);
+  transform: scale(1.02);
+}
+
+.music__title-link {
+  text-decoration: none;
+}
+
+.music__title-link:hover .music__title {
+  color: var(--clr-gold);
 }
 
 .music__info {
