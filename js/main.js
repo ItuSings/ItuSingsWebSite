@@ -2,6 +2,14 @@ import './nav.js';
 import './scroll.js';
 import './text-morph.js';
 
+/* ── Hero iframe: fade in once YouTube is ready ─────────────────────── */
+const heroIframe = document.querySelector('.hero__video iframe');
+if (heroIframe) {
+  heroIframe.addEventListener('load', () => {
+    setTimeout(() => heroIframe.classList.add('is-loaded'), 300);
+  });
+}
+
 /* ── Streaming modal ────────────────────────────────────────────────── */
 const streamModal   = document.getElementById('stream-modal');
 const streamClose   = document.getElementById('stream-modal-close');

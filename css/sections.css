@@ -172,6 +172,12 @@
   min-width: 177.78vh; /* 16:9 at full viewport height */
   pointer-events: none;
   border: none;
+  opacity: 0;
+  transition: opacity 1.8s ease;
+}
+
+.hero__video iframe.is-loaded {
+  opacity: 1;
 }
 
 .hero__overlay {
