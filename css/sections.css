@@ -1,0 +1,404 @@
+/* ═══════════════════════════════════════════════════════════════
+   SECTIONS — Nav, Hero, About, Music, Social, Booking
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Navigation ────────────────────────────────────────────────── */
+#navbar {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 1000;
+  padding-block: 1.4rem;
+  padding-inline: var(--container-px);
+  transition:
+    background   var(--ease-slow),
+    padding      var(--ease-slow),
+    box-shadow   var(--ease-slow);
+}
+
+#navbar.is-scrolled {
+  background: rgba(10, 10, 10, 0.96);
+  padding-block: 0.9rem;
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.7);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  transition: transform var(--ease-base);
+}
+
+.nav-logo:hover {
+  transform: scale(1.06);
+}
+
+.nav-logo__ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  padding: 2.5px;
+  background: linear-gradient(135deg, #a0782e, #e2c87a, #c9a84c, #e2c87a, #a0782e);
+  transition: box-shadow var(--ease-base);
+}
+
+.nav-logo:hover .nav-logo__ring {
+  box-shadow: 0 0 18px rgba(201, 168, 76, 0.55);
+}
+
+.nav-logo__img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.nav-logo__text {
+  font-family: var(--ff-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--clr-gold);
+  letter-spacing: 3px;
+  margin-left: 0.65rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: clamp(1.5rem, 3vw, 2.8rem);
+}
+
+.nav-link {
+  font-size: 0.75rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--clr-grey);
+  position: relative;
+  transition: color var(--ease-base);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--clr-gold);
+  transition: width var(--ease-slow);
+}
+
+.nav-link:hover {
+  color: var(--clr-gold);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Hamburger button — hidden by default on desktop, shown via max-width query */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 1100;
+}
+
+.hamburger__line {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--clr-white);
+  transition:
+    transform var(--ease-base),
+    opacity   var(--ease-base),
+    width     var(--ease-base);
+}
+
+.hamburger[aria-expanded="true"] .hamburger__line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger[aria-expanded="true"] .hamburger__line:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+.hamburger[aria-expanded="true"] .hamburger__line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ── Hero ──────────────────────────────────────────────────────── */
+#home {
+  position: relative;
+  height: 100svh;         /* svh accounts for mobile browser chrome */
+  min-height: 560px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Fallback shown while video loads or on unsupported devices */
+  background: url('../media/ItuSings Posters.jpg') center 20% / cover no-repeat;
+}
+
+.hero__video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--clr-black);
+}
+
+.hero__video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-inline: var(--container-px);
+  max-width: 900px;
+}
+
+.hero__eyebrow {
+  font-size: clamp(0.6rem, 1.5vw, 0.8rem);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  margin-bottom: var(--sp-2);
+}
+
+.hero__name {
+  font-family: var(--ff-display);
+  font-size: clamp(3.8rem, 14vw, 9.5rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: clamp(6px, 2vw, 18px);
+  color: var(--clr-white);
+  text-shadow:
+    0 2px 0   rgba(0, 0, 0, 0.8),
+    0 4px 40px rgba(0, 0, 0, 0.5),
+    0 0  80px  rgba(201, 168, 76, 0.08);
+}
+
+.hero__sub {
+  font-size: clamp(0.6rem, 1.8vw, 0.9rem);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: var(--sp-4);
+}
+
+.hero__scroll {
+  display: inline-block;
+  margin-top: var(--sp-12);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.3rem;
+  animation: bounce 2s ease-in-out infinite;
+  transition: color var(--ease-base);
+}
+
+.hero__scroll:hover {
+  color: var(--clr-gold);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(10px); }
+}
+
+/* ── About ─────────────────────────────────────────────────────── */
+#about {
+  padding-block: var(--section-py);
+  background: var(--clr-bg-alt);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+
+.about__photo img {
+  width: 100%;
+  object-fit: cover;
+  filter: grayscale(10%) contrast(1.05);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.7);
+}
+
+/* ── Music ─────────────────────────────────────────────────────── */
+#music {
+  padding-block: var(--section-py);
+  background: var(--clr-bg);
+}
+
+.music__card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.music__info-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  padding-top: 1.8rem;
+}
+
+.music__player-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.music__player {
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+
+.music__player iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.music__yt-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--clr-muted);
+  transition: color var(--ease-base);
+  align-self: flex-end;
+}
+
+.music__yt-link:hover {
+  color: var(--clr-gold);
+}
+
+.music__artwork {
+  position: relative;
+  width: 100%;
+}
+
+.music__artwork::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  pointer-events: none;
+}
+
+.music__artwork img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  box-shadow: 0 24px 60px rgba(201, 168, 76, 0.2);
+  display: block;
+}
+
+.music__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.music__label {
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  margin-bottom: var(--sp-2);
+}
+
+.music__title {
+  font-family: var(--ff-serif);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: var(--sp-1);
+}
+
+.music__artist {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--clr-muted);
+  margin-bottom: 0;
+}
+
+/* ── Social ────────────────────────────────────────────────────── */
+#social {
+  padding-block: var(--section-py);
+  background: var(--clr-bg-alt);
+}
+
+/* ── Booking ───────────────────────────────────────────────────── */
+#booking {
+  padding-block: var(--section-py);
+  background: var(--clr-bg);
+  text-align: center;
+}
+
+.booking__email-reveal {
+  margin-top: 1.2rem;
+  font-size: 1rem;
+  letter-spacing: 2.5px;
+  color: var(--clr-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+  pointer-events: none;
+}
+
+.booking__email-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.booking__text {
+  max-width: 540px;
+  margin-inline: auto;
+  margin-bottom: var(--sp-8);
+  color: var(--clr-grey);
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  line-height: 1.85;
+}

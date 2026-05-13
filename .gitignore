@@ -1,0 +1,12 @@
+# Unused legacy files
+style.css
+script.js
+generate_bio.py
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.code-workspace

@@ -1,0 +1,184 @@
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE — Mobile-first breakpoints
+   All base styles target mobile. Each breakpoint adds capability.
+
+   Breakpoints:
+     sm  480px   large phones / small landscape
+     md  768px   tablets (portrait)
+     lg  1024px  tablets (landscape) / small laptops → full nav
+     xl  1280px  desktops
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── sm: 480px ─────────────────────────────────────────────────── */
+@media (min-width: 480px) {
+  .hero__name {
+    letter-spacing: 4px;
+  }
+
+  .social__circle {
+    width: 76px;
+    height: 76px;
+  }
+}
+
+/* ── md: 768px — two-column layouts unlock ─────────────────────── */
+@media (min-width: 768px) {
+  .about__grid {
+    grid-template-columns: 1fr 1.6fr;
+  }
+
+  /* Restore gold-rule left-align in two-column layout */
+  .about__text .gold-rule {
+    margin-inline: 0;
+  }
+}
+
+/* ── lg: 1024px — desktop nav, wider gaps ──────────────────────── */
+@media (min-width: 1024px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    position: static;
+    background: none;
+    flex-direction: row;
+    align-items: center;
+    gap: clamp(1.5rem, 3vw, 2.8rem);
+    z-index: auto;
+    overflow: visible;
+  }
+
+  .nav-link {
+    font-size: 0.75rem;
+  }
+}
+
+/* ── xl: 1280px — breathing room ───────────────────────────────── */
+@media (min-width: 1280px) {
+  .about__grid {
+    gap: 5rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MAX-WIDTH overrides (mobile / tablet exceptions)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Below lg: mobile nav overlay ─────────────────────────────── */
+@media (max-width: 1023px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.98);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    z-index: 1050;
+    overflow: hidden;
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+  }
+
+  /* Hide underline effect on mobile nav */
+  .nav-link::after {
+    display: none;
+  }
+}
+
+/* ── Below md: stack music card and about grid ─────────────────── */
+@media (max-width: 767px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about__text .gold-rule {
+    margin-inline: auto;
+  }
+
+  .music__card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .music__info-col {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 1.5rem;
+    order: 2;
+  }
+
+  .music__artwork {
+    width: 100px;
+    flex-shrink: 0;
+  }
+
+  .music__info {
+    align-items: flex-start;
+  }
+
+  .music__player-col {
+    order: 1;
+  }
+
+  .music__yt-link {
+    align-self: flex-end;
+  }
+
+  .social__grid {
+    gap: 2rem;
+  }
+
+  .social__circle {
+    width: 64px;
+    height: 64px;
+    font-size: 1.4rem;
+  }
+}
+
+/* ── Below sm: compact small phones ────────────────────────────── */
+@media (max-width: 479px) {
+  .hero__name {
+    letter-spacing: 1px;
+  }
+
+  .music__artwork img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.72rem;
+  }
+
+  .social__grid {
+    gap: 1.8rem;
+  }
+
+  .social__circle {
+    width: 58px;
+    height: 58px;
+    font-size: 1.3rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}

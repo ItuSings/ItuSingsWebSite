@@ -1,0 +1,162 @@
+/* ═══════════════════════════════════════════════════════════════
+   BASE — Design tokens, reset, typography, utilities
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Design tokens ─────────────────────────────────────────────── */
+:root {
+  /* Colour palette */
+  --clr-bg:        #0a0a0a;
+  --clr-bg-alt:    #111111;
+  --clr-bg-deep:   #050505;
+  --clr-gold:      #c9a84c;
+  --clr-gold-lt:   #e2c87a;
+  --clr-white:     #ffffff;
+  --clr-grey:      #cccccc;
+  --clr-muted:     #888888;
+  --clr-black:     #000000;
+  --clr-border:    #1a1a1a;
+
+  /* Typography */
+  --ff-display: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --ff-serif:   'Playfair Display', Georgia, serif;
+  --ff-sans:    'Lato', system-ui, -apple-system, sans-serif;
+
+  /* Fluid spacing scale (clamp keeps these proportional across viewports) */
+  --sp-1:  0.25rem;
+  --sp-2:  0.5rem;
+  --sp-3:  0.75rem;
+  --sp-4:  1rem;
+  --sp-6:  1.5rem;
+  --sp-8:  2rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+
+  /* Section vertical rhythm */
+  --section-py: clamp(4rem, 10vw, 7rem);
+
+  /* Container */
+  --container-max: 1100px;
+  --container-px:  clamp(1rem, 5vw, 2rem);
+
+  /* Motion */
+  --ease-base: 200ms ease;
+  --ease-slow: 400ms ease;
+}
+
+/* ── Reset ─────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--ff-sans);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--clr-white);
+  background-color: var(--clr-bg);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ── Layout utilities ──────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+/* ── Section shared ────────────────────────────────────────────── */
+.section-header {
+  text-align: center;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.section-title {
+  font-family: var(--ff-serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--clr-white);
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--clr-gold);
+  margin: 0.75rem auto 0;
+}
+
+.section-sub {
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--clr-muted);
+}
+
+/* ── Typography helpers ────────────────────────────────────────── */
+.body-text {
+  color: var(--clr-grey);
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  line-height: 1.9;
+  margin-bottom: 1rem;
+}
+
+.body-text em {
+  color: var(--clr-white);
+  font-style: italic;
+}
+
+.gold-rule {
+  width: 55px;
+  height: 3px;
+  background: var(--clr-gold);
+  margin-bottom: 1.5rem;
+}
+
+/* ── Text-morph chars ──────────────────────────────────────────── */
+.itu-char {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* ── Scroll-reveal ─────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}

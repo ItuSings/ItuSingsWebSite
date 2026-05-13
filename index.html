@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ItuSings — Itumeleng Tshabane. South African vocalist, performer and storyteller from Pretoria." />
+  <meta property="og:title"       content="ItuSings — Official Website" />
+  <meta property="og:description" content="South African vocalist, performer and storyteller." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:image"       content="media/ItuSings Posters.jpg" />
+  <meta name="theme-color"        content="#0a0a0a" />
+  <title>ItuSings — Official Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <header role="banner">
+    <nav id="navbar" aria-label="Main navigation">
+      <div class="nav-container">
+        <a href="#home" class="nav-logo" aria-label="ItuSings home">
+          <span class="nav-logo__ring">
+            <img src="media/ItuSings Logo.jpg" alt="ItuSings" class="nav-logo__img" />
+          </span>
+          <span class="nav-logo__text">ItuSings</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+        <ul class="nav-links" id="nav-links" role="list">
+          <li><a href="#about"   class="nav-link">About</a></li>
+          <li><a href="#music"   class="nav-link">Music</a></li>
+          <li><a href="#social"  class="nav-link">Social</a></li>
+          <li><a href="#booking" class="nav-link">Booking</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" aria-label="Hero">
+      <div class="hero__video" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="auto">
+          <source src="media/hero.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__content">
+        <p class="hero__eyebrow">Itumeleng Tshabane</p>
+        <h1 class="hero__name">ItuSings</h1>
+        <p class="hero__sub">South African Vocalist&nbsp;&middot;&nbsp;Performer&nbsp;&middot;&nbsp;Storyteller</p>
+        <a href="#about" class="hero__scroll" aria-label="Scroll to About section">
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </a>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <div class="container reveal">
+        <div class="section-header">
+          <h2 class="section-title" id="about-title">About</h2>
+          <p class="section-sub">The Artist</p>
+        </div>
+        <div class="about__grid">
+          <figure class="about__photo">
+            <img src="media/Itumeleng_Tshabane.jpg" alt="ItuSings — Itumeleng Tshabane, South African vocalist" loading="lazy" />
+          </figure>
+          <div class="about__text">
+            <div class="gold-rule" aria-hidden="true"></div>
+            <p class="body-text"><span id="about-itu">ItuSings</span> is a South African singer and performer from Pheli, Pretoria, celebrated for his powerful vocals, emotional depth, and commanding stage presence. His journey began in 2014 when he won CMS Unplugged with Metro FM by popular vote — a defining breakthrough that introduced him to national audiences. He later appeared on <em>The Voice SA</em> and <em>Pursuit of Jazz</em>, cementing his place in the music industry.</p>
+            <p class="body-text">His acclaimed cover of "No Woman No Cry" earned him widespread respect, while "Missing You" with Encore and "All of Me" continue to showcase his artistry and versatility.</p>
+            <ul class="highlights" aria-label="Career highlights">
+              <li class="highlights__item"><span class="highlights__bullet" aria-hidden="true">&#9670;</span>CMS Unplugged Winner &mdash; Metro FM &middot; 2014 (popular vote)</li>
+              <li class="highlights__item"><span class="highlights__bullet" aria-hidden="true">&#9670;</span>Featured on The Voice SA &amp; Pursuit of Jazz</li>
+              <li class="highlights__item"><span class="highlights__bullet" aria-hidden="true">&#9670;</span>Collaboration with Grammy Award-winner Vusi Mahlasela</li>
+              <li class="highlights__item"><span class="highlights__bullet" aria-hidden="true">&#9670;</span>Corporate stages: Vodacom &middot; RMB Starlight Classics &middot; Athletics SA &middot; CSIR</li>
+              <li class="highlights__item"><span class="highlights__bullet" aria-hidden="true">&#9670;</span>International shows &mdash; Silversea &amp; Silver Ray &middot; Royal Caribbean Productions</li>
+            </ul>
+            <a href="media/ItuSings_Bio.pptx" download class="btn btn--outline" style="margin-top:2rem">
+              <i class="fas fa-download" aria-hidden="true"></i>
+              <span>Download Artist Bio</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="music" aria-labelledby="music-title">
+      <div class="container reveal">
+        <div class="section-header">
+          <h2 class="section-title" id="music-title">Music</h2>
+          <p class="section-sub">Latest Release</p>
+        </div>
+        <div class="music__card">
+          <div class="music__info-col">
+            <div class="music__artwork">
+              <img src="media/Picture4.jpg" alt="All of Me — ItuSings single cover art" loading="lazy" />
+            </div>
+            <div class="music__info">
+              <p class="music__label">Single</p>
+              <h3 class="music__title">All of Me</h3>
+              <p class="music__artist" id="music-itu">ItuSings</p>
+            </div>
+          </div>
+          <div class="music__player-col">
+            <div class="music__player">
+              <iframe
+                src="https://www.youtube.com/embed/1IJNYlNz92U?rel=0&modestbranding=1"
+                title="ItuSings — All of Me"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+            <a href="https://www.youtube.com/watch?v=1IJNYlNz92U" target="_blank" rel="noopener noreferrer" class="music__yt-link">
+              <i class="fab fa-youtube" aria-hidden="true"></i>
+              Open on YouTube
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="social" aria-labelledby="social-title">
+      <div class="container reveal">
+        <div class="section-header">
+          <h2 class="section-title" id="social-title">Follow</h2>
+          <p class="section-sub">Stay connected with ItuSings</p>
+        </div>
+        <ul class="social__grid" role="list" aria-label="Social media links">
+          <li class="social__item">
+            <a href="https://www.instagram.com/Itusings" target="_blank" rel="noopener noreferrer" class="social__circle" aria-label="Follow ItuSings on Instagram">
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+            <span class="social__handle">@ItuSings</span>
+          </li>
+          <li class="social__item">
+            <a href="https://www.youtube.com/@ItuSings" target="_blank" rel="noopener noreferrer" class="social__circle" aria-label="Subscribe on YouTube">
+              <i class="fab fa-youtube" aria-hidden="true"></i>
+            </a>
+            <span class="social__handle">ItuSings</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="booking" aria-labelledby="booking-title">
+      <div class="container reveal">
+        <div class="section-header">
+          <h2 class="section-title" id="booking-title">Book <span id="booking-itu">ItuSings</span></h2>
+          <p class="section-sub">Enquiries &amp; Bookings</p>
+        </div>
+        <p class="booking__text">Available for corporate events, live shows, collaborations, gala dinners, and private performances across South Africa and internationally.</p>
+        <button type="button" class="btn btn--outline" id="booking-btn">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <span>Get in Touch</span>
+        </button>
+        <p class="booking__email-reveal" id="booking-email-reveal">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <span id="email-text"></span>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <p class="footer__logo">ItuSings</p>
+      <p class="footer__copy">&copy; 2025 Itumeleng Tshabane. All rights reserved.</p>
+      <a href="#home" class="footer__top" aria-label="Back to top">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+/* ═══════════════════════════════════════════════════════════════
+   COMPONENTS — Buttons, social circles, highlights, footer
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Buttons ───────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--ff-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.875rem 2rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition:
+    background  var(--ease-base),
+    color       var(--ease-base),
+    border-color var(--ease-base),
+    transform   var(--ease-base);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--primary {
+  background: var(--clr-gold);
+  color: var(--clr-black);
+  border-color: var(--clr-gold);
+}
+
+.btn--primary:hover {
+  background: var(--clr-gold-lt);
+  border-color: var(--clr-gold-lt);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--clr-gold);
+  border-color: var(--clr-gold);
+}
+
+.btn--outline:hover {
+  background: var(--clr-gold);
+  color: var(--clr-black);
+}
+
+/* ── Career highlights list ────────────────────────────────────── */
+.highlights {
+  margin-top: var(--sp-8);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.highlights__item {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  color: var(--clr-grey);
+  font-size: clamp(0.82rem, 1.4vw, 0.92rem);
+  line-height: 1.55;
+}
+
+.highlights__bullet {
+  color: var(--clr-gold);
+  flex-shrink: 0;
+  font-size: 0.55rem;
+  margin-top: 5px;
+}
+
+/* ── Social circles ────────────────────────────────────────────── */
+.social__grid {
+  display: flex;
+  justify-content: center;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  flex-wrap: wrap;
+}
+
+.social__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.social__circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--clr-black);
+  color: var(--clr-white);
+  font-size: 1.6rem;
+  border: 2px solid #1c1c1c;
+  transition:
+    background   var(--ease-base),
+    border-color var(--ease-base),
+    color        var(--ease-base),
+    transform    var(--ease-base);
+}
+
+.social__circle:hover {
+  background: var(--clr-gold);
+  border-color: var(--clr-gold);
+  color: var(--clr-black);
+  transform: translateY(-5px);
+}
+
+.social__handle {
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+  color: var(--clr-grey);
+}
+
+/* ── Footer ────────────────────────────────────────────────────── */
+footer {
+  background: var(--clr-bg-deep);
+  padding-block: var(--sp-12) var(--sp-8);
+  text-align: center;
+  border-top: 1px solid var(--clr-border);
+}
+
+.footer__logo {
+  font-family: var(--ff-serif);
+  font-size: 1.5rem;
+  color: var(--clr-gold);
+  letter-spacing: 4px;
+  margin-bottom: var(--sp-2);
+}
+
+.footer__copy {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: var(--clr-muted);
+}
+
+.footer__top {
+  display: inline-block;
+  margin-top: var(--sp-6);
+  color: var(--clr-muted);
+  font-size: 1.1rem;
+  transition: color var(--ease-base), transform var(--ease-base);
+}
+
+.footer__top:hover {
+  color: var(--clr-gold);
+  transform: translateY(-3px);
+}
