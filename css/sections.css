@@ -172,7 +172,7 @@
   pointer-events: none;
   border: none;
   opacity: 0;
-  transition: opacity 1.8s ease;
+  transition: opacity 3.5s ease;
 }
 
 .hero__video iframe.is-loaded {

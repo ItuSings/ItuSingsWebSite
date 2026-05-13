@@ -2,12 +2,12 @@ import './nav.js';
 import './scroll.js';
 import './text-morph.js';
 
-/* ── Hero iframe: fade in once YouTube is ready ─────────────────────── */
+/* ── Hero iframe: fade in slowly — guaranteed via timeout ────────────── */
 const heroIframe = document.querySelector('.hero__video iframe');
 if (heroIframe) {
-  heroIframe.addEventListener('load', () => {
-    setTimeout(() => heroIframe.classList.add('is-loaded'), 300);
-  });
+  const fadeIn = () => heroIframe.classList.add('is-loaded');
+  heroIframe.addEventListener('load', () => setTimeout(fadeIn, 500));
+  setTimeout(fadeIn, 3000); // fallback: start fade after 3s regardless
 }
 
 /* ── Streaming modal ────────────────────────────────────────────────── */
