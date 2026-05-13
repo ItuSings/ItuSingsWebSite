@@ -3,6 +3,9 @@ style.css
 script.js
 generate_bio.py
 
+# Large media — served via external CDN instead
+media/hero.mp4
+
 # OS
 .DS_Store
 Thumbs.db

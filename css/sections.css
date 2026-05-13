@@ -161,10 +161,17 @@
   background: var(--clr-black);
 }
 
-.hero__video video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.hero__video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 56.25vw;     /* 16:9 at full viewport width */
+  min-height: 100vh;
+  min-width: 177.78vh; /* 16:9 at full viewport height */
+  pointer-events: none;
+  border: none;
 }
 
 .hero__overlay {
