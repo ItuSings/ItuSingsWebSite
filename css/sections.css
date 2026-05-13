@@ -319,6 +319,10 @@
 .music__artwork {
   position: relative;
   width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
 .music__artwork::after {
@@ -344,7 +348,11 @@
 }
 
 .music__title-link {
-  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: center;
 }
 
 .music__title-link:hover .music__title {

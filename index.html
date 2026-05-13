@@ -104,14 +104,14 @@
         </div>
         <div class="music__card">
           <div class="music__info-col">
-            <a href="https://linktr.ee/Itu_Sings" target="_blank" rel="noopener noreferrer" class="music__artwork" aria-label="Stream All of Me on Linktree">
+            <button class="music__artwork" aria-label="Stream All of Me" data-open-stream>
               <img src="media/Picture4.jpg" alt="All of Me — ItuSings single cover art" loading="lazy" />
-            </a>
+            </button>
             <div class="music__info">
               <p class="music__label">Single</p>
-              <a href="https://linktr.ee/Itu_Sings" target="_blank" rel="noopener noreferrer" class="music__title-link">
+              <button class="music__title-link" data-open-stream>
                 <h3 class="music__title">All of Me</h3>
-              </a>
+              </button>
               <p class="music__artist" id="music-itu">ItuSings</p>
             </div>
           </div>
@@ -185,6 +185,40 @@
       </a>
     </div>
   </footer>
+
+  <!-- Streaming modal -->
+  <div class="stream-modal" id="stream-modal" role="dialog" aria-modal="true" aria-labelledby="stream-modal-title" hidden>
+    <div class="stream-modal__backdrop" id="stream-modal-backdrop"></div>
+    <div class="stream-modal__card">
+      <button class="stream-modal__close" id="stream-modal-close" aria-label="Close">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+      <img src="media/Picture4.jpg" alt="All of Me — ItuSings" class="stream-modal__art" />
+      <p class="stream-modal__label">Single</p>
+      <h3 class="stream-modal__title" id="stream-modal-title">All of Me</h3>
+      <p class="stream-modal__artist">ItuSings</p>
+      <ul class="stream-modal__links">
+        <li>
+          <a href="https://open.spotify.com/search/ItuSings%20All%20of%20Me" target="_blank" rel="noopener noreferrer" class="stream-btn stream-btn--spotify">
+            <i class="fab fa-spotify" aria-hidden="true"></i>
+            <span>Spotify</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://music.apple.com/search?term=ItuSings+All+of+Me" target="_blank" rel="noopener noreferrer" class="stream-btn stream-btn--apple">
+            <i class="fab fa-apple" aria-hidden="true"></i>
+            <span>Apple Music</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://music.youtube.com/search?q=ItuSings+All+of+Me" target="_blank" rel="noopener noreferrer" class="stream-btn stream-btn--ytmusic">
+            <i class="fab fa-youtube" aria-hidden="true"></i>
+            <span>YouTube Music</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>

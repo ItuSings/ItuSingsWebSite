@@ -2,6 +2,35 @@ import './nav.js';
 import './scroll.js';
 import './text-morph.js';
 
+/* ── Streaming modal ────────────────────────────────────────────────── */
+const streamModal   = document.getElementById('stream-modal');
+const streamClose   = document.getElementById('stream-modal-close');
+const streamBackdrop = document.getElementById('stream-modal-backdrop');
+
+function openStreamModal() {
+  if (!streamModal) return;
+  streamModal.hidden = false;
+  document.body.style.overflow = 'hidden';
+  streamClose.focus();
+}
+
+function closeStreamModal() {
+  if (!streamModal) return;
+  streamModal.hidden = true;
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('[data-open-stream]').forEach(el => {
+  el.addEventListener('click', openStreamModal);
+});
+
+if (streamClose)   streamClose.addEventListener('click', closeStreamModal);
+if (streamBackdrop) streamBackdrop.addEventListener('click', closeStreamModal);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && streamModal && !streamModal.hidden) closeStreamModal();
+});
+
 /* ── Booking: reveal email on click, prevent repeat clicks ─────────── */
 const bookingBtn  = document.getElementById('booking-btn');
 const emailReveal = document.getElementById('booking-email-reveal');
