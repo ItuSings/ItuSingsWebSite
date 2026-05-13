@@ -150,8 +150,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Fallback shown while video loads or on unsupported devices */
-  background: url('../media/ItuSings Posters.jpg') center 20% / cover no-repeat;
+  background: #000;
 }
 
 .hero__video {
